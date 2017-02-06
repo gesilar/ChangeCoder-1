@@ -1,24 +1,46 @@
-var path=require('path');
+const Hapi = require("hapi");
 
-var express=require('express');
+const server = new Hapi.Server();
 
-//自定义模块
-var web_api=require('./src/routes/web_api');
+const staticRoute = require("./src/routes/static-files");
+const HapiReactview = require("./src/templates/utils/hapi-react-view");
 
-//功能执行
-var app=express();
-//设置静态文件
-app.use(express.static(path.join(__dirname,'public')));
-//注册html模版引擎
-app.engine('html',require('ejs').__express);
-//使用视图模版
-app.set('view engine','html');
-//设置视图
-app.set('views',path.join(__dirname,'views'));
-//注册路由web_api,logic_api并使用
-app.use('/',web_api);
-app.set('port', process.env.PORT || 8080);
-//启动服务
-var server=app.listen(app.get('port'),function(){
-    console.log('server start and port is '+app.get('port'));
+server.connection({
+    port: 8080,
+    host: "localhost"
 });
+
+server.register(require("vision"), (err) => {
+    if (err) {
+        throw err;
+    }
+
+    server.views({
+        defaultExtension: "js",
+        engines: {
+            jsx: HapiReactview,
+            js: HapiReactview
+        },
+        compileOptions: {},
+        relativeTo: __dirname,
+        path: "src/templates"
+    });
+});
+
+server.register(require("inert"), (err) => {
+    if (err) {
+        throw err;
+    }
+});
+
+staticRoute(server, __dirname);
+
+server.start((err) => {
+    if (err) {
+        server.log(["error"], err);
+        throw err;
+    }
+
+    console.log(`Server started at: ${server.info.uri}`);
+    server.log(['Info'], `Server started at: ${server.info.uri}`);
+})

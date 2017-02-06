@@ -1,0 +1,14 @@
+.head {
+    background-color: rgb(0, 188, 212);
+}
+.web-icon {
+    font-family: Roboto, sans-serif;
+    cursor: pointer;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    line-height: 64px;
+    font-weight: 300;
+    background-color: rgb(0, 188, 212);
+    padding-left: 24px;
+    margin-bottom: 8px;
+}
