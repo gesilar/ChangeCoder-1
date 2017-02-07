@@ -1,14 +1,11 @@
 {
   "name": "changecoder",
   "version": "0.0.1",
-  "engines": {
-    "node": "6.3.0"
-  },
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "hapi": "^16.1.0",
-    "inert": "^4.1.0"
+    "ejs": "^2.5.2",
+    "express": "^4.14.0"
   }
 }

@@ -1,30 +1,24 @@
-const Hapi = require("hapi");
+var path=require('path');
 
-const server = new Hapi.Server();
+var express=require('express');
 
-const staticRoute = require("./src/routes/static-files");
+//自定义模块
+var web_api=require('./src/routes/web_api');
 
-const port = process.env.PORT || 8080;
-
-server.connection({
-    port,
-    host: "localhost"
+//功能执行
+var app=express();
+//设置静态文件
+app.use(express.static(path.join(__dirname,'public')));
+//注册html模版引擎
+app.engine('html',require('ejs').__express);
+//使用视图模版
+app.set('view engine','html');
+//设置视图
+app.set('views',path.join(__dirname,'views'));
+//注册路由web_api,logic_api并使用
+app.use('/',web_api);
+app.set('port', process.env.PORT || 8080);
+//启动服务
+var server=app.listen(app.get('port'),function(){
+    console.log('server start and port is '+app.get('port'));
 });
-
-server.register(require("inert"), (err) => {
-    if (err) {
-        throw err;
-    }
-});
-
-staticRoute(server, __dirname);
-
-server.start((err) => {
-    if (err) {
-        server.log(["error"], err);
-        throw err;
-    }
-
-    console.log(`Server started at: ${server.info.uri}`);
-    server.log(['Info'], `Server started at: ${server.info.uri}`);
-})
