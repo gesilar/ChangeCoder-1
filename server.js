@@ -6,7 +6,7 @@ const staticRoute = require("./src/routes/static-files");
 const HapiReactview = require("./src/templates/utils/hapi-react-view");
 
 server.connection({
-    port: 8080,
+    port: 5000,
     host: "localhost"
 });
 
