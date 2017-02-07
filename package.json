@@ -1,6 +1,9 @@
 {
   "name": "changecoder",
   "version": "0.0.1",
+  "engines": {
+    "node": "6.3.0"
+  },
   "scripts": {
     "start": "node server.js"
   },

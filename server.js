@@ -4,7 +4,8 @@ const server = new Hapi.Server();
 
 const staticRoute = require("./src/routes/static-files");
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 8080;
+
 server.connection({
     port,
     host: "localhost"
