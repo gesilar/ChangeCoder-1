@@ -2,13 +2,18 @@ body, div, ul{
     margin: 0px;
     padding: 0px;
 }
-
 .nav {
     list-style-type: none;
 }
 .nav-horizontal {
-    display: inline-block;
+    display: block;
 }
 .pull-left {
     float: left;
+}
+.pull-right {
+    float: right;
+}
+a {
+    text-decoration: none;
 }
