@@ -3,51 +3,142 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChangeCoder</title>
-    <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/icon.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/response.css">
     <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
-    <div class="app">
-        <div class="head">
-            <ul class="nav nav-horizontal">
-                <li class="pull-left">
-                    <span class="web-icon">漫途下一站</span>
-                </li>
-                <li class="pull-right">
-                    <a href="https://github.com/changeCoder/ChangeCoder">
-                        <div>
+    <div id="app">
+        <nav class="nav">
+            <a class="logo">
+                <span>ChangeCoder</span>
+            </a>
+            <div class="nav-bar collapse">
+                <ul class="nav-items">
+                    <li><a href="#">书山有路勤为径</a></li>
+                    <li><a href="#">学海无涯苦作舟</a></li>
+                    <li><a href="#">漫途下一站</a></li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">
                             <span class="icon-github github">&nbsp;</span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="content">
-            <div class="content-left">
-                <div class="flex content-left-self">
-                    <div class="content-left-self-bg" style="background-image: url(images/bg.jpg);"></div>
-                    <div class="content-left-self-info">
-                        <a href="profile/index.html">
-                            <img class="avator" src="images/mantu.jpeg">
                         </a>
-                        <h6>
-                            <a class="self-name" href="profile/index.html">漫途下一站</a>
-                        </h6>
-                        <p>
-                            我答应在旅途的路上给他们寄明信片，也决定在别人漆黑冰冷的青春里，做一个温暖光明的路灯。愿我的声音穿过你的青春，伴你安然入睡。这里是漫途下一站FM，我是主播酒酒，我在下一站，等着你。
-                        </p>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="content">
+            <div class="container">
+                <div class="info">
+                    <div class="introduce">
+                        <div class="bg" style="background-image: url(images/bg.jpg);"></div>
+                        <div class="in">
+                            <a href="profile.html">
+                                <img class="ig" src="images/baojian.jpg">
+                            </a>
+                            <h6 class="name">
+                                <a href="profile.html">
+                                    fancy
+                                </a>
+                            </h6>
+                            <p class="ip">
+                                my interest is music, reading, and lol.
+                            </p>
+                            <ul class="notes">
+                                <li><a href="#">Articles</a>
+                                    <h6>12</h6>
+                                </li>
+                                <li><a href="#">Answers</a>
+                                    <h6>1</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="introduce">
+                        <div class="about">
+                            <h6>About</h6>
+                            <ul class="info-list">
+                                <li><span class="icon-user">&nbsp;</span>male</li>
+                                <li><span class="icon-calendar">&nbsp;</span>26 years old</li>
+                                <li><span class="icon-clipboard">&nbsp;</span>Worded at Moodys</li>
+                                <li><span class="icon-home">&nbsp;</span>Lives in ShenZhen</li>
+                                <li><span class="icon-location">&nbsp;</span>From Hubei Chibi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>
+                            <img class="itg" src="images/baojian.jpg">
+                            <div>
+                                <div>
+                                    <div>
+                                        <small class="pull-right">12 min</small>
+                                        <h6>Fancy</h6>
+                                    </div>
+                                    <a>
+                                        <h2>组建生命周期</h2>
+                                    </a>
+                                    <p>
+                                        实例化 componentWillMount 在完成首次渲染之前调用，此时仍可以修改组件的state。 componentDidMount 真实的DOM被渲染出来后调用，在该方法中可通过this.getDOMNode()访问到真实的DOM元素。此时已可以使用其他类库来操作这个DOM。
+                                        在服务端中，该方法不会被调用。 存在期 componentWillReceiveProps 组件接收到新的props时调用，并将其作为参数nextProps使用，此时可以更改组件props及state。
+                                        shouldComponentUpdate 组件是否应当渲染新的props或state，返回false表示跳过后续的生命周期方法，通常不需要使用以避免出现bug。在出现应用的瓶颈时，可通过该方法进行适当的优化。
+                                        在首次渲染期间或者调用了forceUpdate方法后，该方法不会被调用。 componentWillUpdate 接收到新的props或者state后，进行渲染之前调用，此时不允许更新props或state。
+                                        componentDidUpdate 完成渲染新的props或者state后调用，此时可以访问到新的DOM元素。
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="itg" src="images/baojian.jpg">
+                            <div>
+                                <div>
+                                    <div>
+                                        <small class="pull-right">1 hour</small>
+                                        <h6>Fancy</h6>
+                                    </div>
+                                    <a>
+                                        <h2>工欲善其事,必先利其器</h2>
+                                    </a>
+                                    <p>
+                                        Gulp 基于流的自动化构建工具 基础 gulp-util 清除(clean) gulp-clean 压缩(minify) html: gulp-htmlmin image: gulp-imagemin css: gulp-clean-css
+                                        js: gulp-uglify css前缀(prefixer) gulp-autoprefixer 重命名(rename) gulp-rename 合并(concat)
+                                        gulp-concat 代码检测(eslint) gulp-eslint 执行顺序(sequence) gulp-sequence 转换(transform) less:
+                                        gulp-less es2015: babel Webpack(2.0） 模块打包工具 NodeJS 基于 Chrome V8 引擎的 JavaScript 运行环境。
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="others">
+                    <div class="introduce">
+                        <div class="points">
+                            © 2017 ChangeCoder
+                            <a href="#">React</a>
+                            <a href="#">NodeJS</a>
+                            <a href="#">C#</a>
+                            <a href="#">JavaScript</a>
+                            <a href="#">SQL Server</a>
+                            <a href="#">Css</a>
+                            <a href="#">Html5</a>
+                            <a href="#">ASP.NET MVC</a>
+                            <a href="#">ASP.NET WEB API</a>
+                            <a href="#">Moongodb</a>
+                            <a href="#">Redis</a>
+                            <a href="#">Http</a>
+                            <a href="#">Web</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="content-middle">
 
-            </div>
-            <div class="content-right">
-
-            </div>
         </div>
     </div>
 </body>

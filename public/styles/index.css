@@ -1,92 +1,95 @@
+*, *::before, *::after {
+    box-sizing: inherit
+}
+html {
+    box-sizing: border-box;
+    font-size: 14px;
+}
 body {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1rem;
-    font-weight: 300;
     line-height: 1.6;
-    color: #292b2c;
 }
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 0px;
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0px;
 }
-.head {
+#app {
+    padding-top: 50px;
+}
+.nav{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
     background-color: rgb(0, 188, 212);
-    width: 100%;
-    height: 64px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
 }
-.web-icon {
-    font-family: Roboto, sans-serif;
-    cursor: pointer;
-    font-size: 24px;
-    color: rgb(255, 255, 255);
-    line-height: 64px;
+.logo {
+    display: inline-block;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    color: #fff;
     font-weight: 300;
-    background-color: rgb(0, 188, 212);
-    padding-left: 24px;
-    margin-bottom: 8px;
+}
+.collapse {
+    display: none;
+}
+.nav-items {
+    display: flex;
+    margin-right: auto;
+}
+.nav-items > li > a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #fff;
 }
 .github {
-    font-family: Roboto, sans-serif;
-    cursor: pointer;
     font-size: 24px;
-    color: rgb(255, 255, 255);
-    line-height: 64px;
-    font-weight: 300;
-    background-color: rgb(0, 188, 212);
     padding-right: 24px;
-    margin-bottom: 8px;
+    line-height: 36px;
+    color: #fff;
 }
+
+/* content */
 
 .content {
-    padding: 1.5em 15px 0px 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1.5rem;
+}
+.container {
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
-
-.content-left {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 25%;
-    max-width: 25%;
-    text-align: center;
+.info, .list, .others  {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 1px;
 }
-.content-middle {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-.content-left-self {
-    margin: 0px 15px;
-}
-.content-left-self-bg {
-    height: 150px;
-    background-size: cover;
-}
-.content-left-self-info {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    padding: 1.25rem;
-}
-.flex {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
+.introduce {
     display: flex;
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
+    margin-bottom: 1.25rem;
 }
-
-.avator {
+.bg {
+    height: 150px;
+    background-size: cover;
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+}
+.in {
+    text-align: center;
+    padding: 1.25rem;
+}
+.ig {
     max-width: 100px;
     margin-top: -70px;
     margin-bottom: 5px;
@@ -94,6 +97,81 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 100%;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
-.self-name {
+.name {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+.name a {
     color: inherit;
 }
+.ip {
+    margin-bottom: 1.5rem;
+}
+.notes {
+    margin-bottom: 1rem;
+}
+.notes > li {
+    display: inline-block;
+    padding: 0 10px;
+    border-right:  1px solid #d4dbe0;
+}
+.notes > li:last-child {
+    border-right: 0;
+}
+.notes > li > a {
+    color: inherit;
+}
+.notes > li > h6 {
+    font-size: 1rem;
+}
+.about {
+    padding: 1.25rem;
+}
+.about > h6 {
+    font-size: 1rem;
+}
+.about > ul > li {
+    margin-bottom: 5px;
+}
+.about > ul li span{
+    margin-right: 1rem;
+}
+
+.points {
+    padding: 1.25rem;
+}
+
+.points a {
+    margin-left: 5px;
+}
+
+.list > ul > li {
+    display: flex;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    margin-bottom: -1px;
+}
+.list > ul {
+    margin-bottom: 1.5rem;
+}
+.itg {
+    width: 42px;
+    margin-right: 1rem;
+    align-self: flex-start;
+    border-radius: 100%;
+}
+.pull-right {
+    float: right;
+}
+
+.list a {
+    color: inherit;
+    cursor: pointer;
+}
+
+.list h6 {
+    font-size: 1rem;
+}
+
+
+

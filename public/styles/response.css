@@ -1,0 +1,28 @@
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 992px) {
+    .info {
+        flex: 0 0 25%;
+    }
+    .list {
+        flex: 0 0 50%;
+    }
+    .others {
+        flex: 0 0 25%;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-bar {
+        display: flex !important;
+        width: 100%;
+    }
+}
+
+@media (min-width: 576px) {
+    .itg {
+        width: 60px !important;
+    }
+}
