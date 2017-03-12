@@ -86,11 +86,19 @@
                                         <h2>组建生命周期</h2>
                                     </a>
                                     <p>
-                                        实例化 componentWillMount 在完成首次渲染之前调用，此时仍可以修改组件的state。 componentDidMount 真实的DOM被渲染出来后调用，在该方法中可通过this.getDOMNode()访问到真实的DOM元素。此时已可以使用其他类库来操作这个DOM。
-                                        在服务端中，该方法不会被调用。 存在期 componentWillReceiveProps 组件接收到新的props时调用，并将其作为参数nextProps使用，此时可以更改组件props及state。
-                                        shouldComponentUpdate 组件是否应当渲染新的props或state，返回false表示跳过后续的生命周期方法，通常不需要使用以避免出现bug。在出现应用的瓶颈时，可通过该方法进行适当的优化。
-                                        在首次渲染期间或者调用了forceUpdate方法后，该方法不会被调用。 componentWillUpdate 接收到新的props或者state后，进行渲染之前调用，此时不允许更新props或state。
-                                        componentDidUpdate 完成渲染新的props或者state后调用，此时可以访问到新的DOM元素。
+                                        <br/>
+                                    </p>
+                                    <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word; color: rgb(47, 47, 47); font-family: &quot;Songti SC&quot;, serif; white-space: normal;">
+                                        实例化<br/>componentWillMount<br/>在完成首次渲染之前调用，此时仍可以修改组件的state。<br/>componentDidMount<br/>真实的DOM被渲染出来后调用，在该方法中可通过this.getDOMNode()访问到真实的DOM元素。此时已可以使用其他类库来操作这个DOM。<br/>在服务端中，该方法不会被调用。
+                                    </p>
+                                    <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word; color: rgb(47, 47, 47); font-family: &quot;Songti SC&quot;, serif; white-space: normal;">
+                                        存在期<br/>componentWillReceiveProps<br/>组件接收到新的props时调用，并将其作为参数nextProps使用，此时可以更改组件props及state。<br/>shouldComponentUpdate<br/>组件是否应当渲染新的props或state，返回false表示跳过后续的生命周期方法，通常不需要使用以避免出现bug。在出现应用的瓶颈时，可通过该方法进行适当的优化。<br/>在首次渲染期间或者调用了forceUpdate方法后，该方法不会被调用。<br/>componentWillUpdate<br/>接收到新的props或者state后，进行渲染之前调用，此时不允许更新props或state。<br/>componentDidUpdate<br/>完成渲染新的props或者state后调用，此时可以访问到新的DOM元素。
+                                    </p>
+                                    <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word; color: rgb(47, 47, 47); font-family: &quot;Songti SC&quot;, serif; white-space: normal;">
+                                        销毁&amp;清理期<br/>componentWillUnmount<br/>组件被移除之前被调用，可以用于做一些清理工作，在componentDidMount方法中添加的所有任务都需要在该方法中撤销，比如创建的定时器或添加的事件监听器。
+                                    </p>
+                                    <p>
+                                        <br/>
                                     </p>
                                 </div>
                             </div>
@@ -106,11 +114,149 @@
                                     <a>
                                         <h2>工欲善其事,必先利其器</h2>
                                     </a>
+                                    <div class="show-content" style="box-sizing: border-box; color: rgb(47, 47, 47); word-break: break-word; line-height: 1.7; font-family: &quot;Songti SC&quot;, serif; white-space: normal;">
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            JavaScript模块<br/>意义:解耦系统的复杂性，便于管理，开发，维护
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            模块化内容
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            定义封装的模块
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            定义新模块对其他模块的依赖
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            可对其他模块的引入支持
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            模块开发规范
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            意义：智能解析模块依赖关系，并自动加载相关模块
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            CommonJS
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            简介
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            CommonJS 加载模块是同步的，所以只有加载完成才能执行后面的操作。 像Node.js主要用于服务器的编程，加载的模块文件一般都已经存在本地硬盘，加载起来比较快，不用考虑异步加载的方式，所以CommonJS规范在Node中得到很好的应用。
+                                            CommonJS是一个不断在发展的规范，其计划所做的内容较多，这里就只针对其Module部分进行简单说明，详细的可以进入其
+                                            <a
+                                                href="http://undefined" target="_blank" style="box-sizing: border-box; background-color: transparent; color: rgb(49, 148, 208); text-decoration-line: none; cursor: pointer;">官网</a>查询
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            内容
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            模块引用(require)<br/>使用require方法，接受一个参数（即模块标识），以此引入一个模块的API到当前上下文中。
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            模块定义(exports)<br/>在模块中，上下文提供了require方法引入外部模块，对于引入的功能，上下文提供了exports对象用于导出当前模块的方法或者变量，并且它是唯一的导出出口。
+                                            在node中，一个文件就是一个模块。
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            模块标识(module)<br/>就是传递给require方法的参数，必须是符合小驼峰命名的字符串，或者以.，..开头的相对路径，胡总和绝对路径，可以没有文件名后缀.js<br/>示例
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            这里以NodeJS为例， require()用来引入外部模块；exports对象用于导出当前模块的方法或变量，唯一的导出口；module对象就代表模块本身。
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            math.js<br/>module.exports.add=function(a,b){<br/>return a+b;<br/>}
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            app.js<br/>var math=require(&#39;math&#39;);<br/>math.add(1,2);
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            Node本身的模块实现并非完全按照规范实现，而是对模块规范进行了一些取舍，同时也增加了少许一些自身的特点，详细的会在《Node的模块实现》中说明
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            AMD(Asynchromous Module Define 异步模块定义)
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            简介
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            所有的模块将被异步加载，模块加载不影响后面语句运行。所有依赖某些模块的语句均放置在回调函数中。
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            内容
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            AMD规范定义了一个自由变量或者说是全局变量 define 的函数。
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            define( id?, dependencies?, factory );
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            第一个参数 id 为字符串类型，表示了模块标识，为可选参数。若不存在则模块标识应该默认定义为在加载器中被请求脚本的标识。如果存在，那么模块标识必须为顶层的或者一个绝对的标识。
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            第二个参数，dependencies ，是一个当前模块依赖的，已被模块定义的模块标识的数组字面量。
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            第三个参数，factory，是一个需要进行实例化的函数或者一个对象。
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            示例
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            这里以RequireJS为例 RequireJS 的基本思想为：通过一个函数来将所有所需要的或者说所依赖的模块实现装载进来，然后返回一个新的函数（模块），我们所有的关于新模块的业务代码都在这个函数内部操作，其内部也可无限制的使用已经加载进来的模块。
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            &lt;script data-main=&quot;main.js&quot; src=&quot;require.js&quot;&gt;&lt;/script&gt;
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            main.js是指定的主代码脚本文件，所有的依赖模块代码文件都将从该文件开始异步加载进入执行
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            //defined用于定义模块，RequireJS要求每个模块均放在独立的文件之中。按照是否有依赖其他模块的情况分为独立模块和非独立模块<br/>//独立模块<br/>define({<br/>method1:
+                                            function(){},<br/>method2: function(){}<br/>});<br/>//非独立模块<br/>define([ &#39;module1&#39;,
+                                            &#39;module2&#39; ], function(m1, m2){<br/>...//非独立模块<br/>});
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            //require调用模块，在加载 foo 与 bar 两个模块之后执行回调函数实现具体过程。<br/>require( [&#39;foo&#39;,
+                                            &#39;bar&#39;], function( foo, bar ){<br/>foo.func();<br/>bar.func();<br/>} );
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            define 和 require 这两个定义模块，调用模块的方法合称为AMD模式，定义模块清晰，不会污染全局变量，清楚的显示依赖关系。AMD模式可以用于浏览器环境并且允许非同步加载模块，也可以按需动态加载模块
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            CMD(Common Module Define 通用模块定义)
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            简介
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            是SeaJS 在推广过程中对模块定义的规范化产出 由于本人对SeaJS的使用经验为0，所以 这里 不做说明
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            CMD与AMD区别简述
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            CMD 推崇依赖就近，AMD 推崇依赖前置。
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            AMD 的 API 默认是一个当多个用，CMD 的 API 严格区分，推崇职责单一。
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            参考资料来源说明
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            <a href="http://undefined" target="_blank" style="box-sizing: border-box; background-color: transparent; color: rgb(49, 148, 208); text-decoration-line: none; cursor: pointer;">JavaSript模块规范 - AMD规范与CMD规范介绍</a>
+                                        </p>
+                                        <p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 25px; word-break: break-word;">
+                                            《深入浅出NodeJS》
+                                        </p>
+                                    </div>
                                     <p>
-                                        Gulp 基于流的自动化构建工具 基础 gulp-util 清除(clean) gulp-clean 压缩(minify) html: gulp-htmlmin image: gulp-imagemin css: gulp-clean-css
-                                        js: gulp-uglify css前缀(prefixer) gulp-autoprefixer 重命名(rename) gulp-rename 合并(concat)
-                                        gulp-concat 代码检测(eslint) gulp-eslint 执行顺序(sequence) gulp-sequence 转换(transform) less:
-                                        gulp-less es2015: babel Webpack(2.0） 模块打包工具 NodeJS 基于 Chrome V8 引擎的 JavaScript 运行环境。
+                                        <br/>
                                     </p>
                                 </div>
                             </div>
