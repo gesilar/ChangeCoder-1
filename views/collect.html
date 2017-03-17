@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PMO商机管理</title>
+    <link rel="stylesheet" href="styles/collect.css">
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <form action="/api/savePmo" method="post">
+                <div class="editor-title">
+                    <input class="textbox" name="company" type="text" placeholder="客户名称">
+                </div>
+                <div class="editor-title">
+                    <input class="textbox" name="name" type="text" placeholder="联系人">
+                </div>
+                <div class="editor-title">
+                    <input class="textbox" name="tel" type="text" placeholder="联系电话">
+                </div>
+                <div class="editor-title">
+                    <input class="textbox" name="person" type="text" placeholder="商机提报人">
+                </div>
+                <div class="editor-title">
+                    <input class="textbox" name="partname" type="text" placeholder="分部名称">
+                </div>
+                <div class="textbox">
+                    <label>商机类型:</label>
+                    <select name="type">
+                        <option value ="仓储" selected>仓储</option>
+                        <option value ="海淘">海淘</option>
+                        <option value="银行">银行</option>
+                        <option value="保险">保险</option>
+                        <option value="贵货">贵货</option>
+                        <option value="行业标杆">行业标杆</option>
+                        <option value="政企">政企</option>
+                    </select>
+                </div>
+                <div class="md-btngroup">
+                    <input class="btn primary" type='submit' value="提交">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
