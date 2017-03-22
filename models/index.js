@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var pmo= require('./pmo');
 
 const config = {
-    dbconnect: 'mongodb://139.196.12.240:27017/changecoder'
+    dbconnect: 'mongodb://coder:123@139.196.12.240:27017/changecoder'
 }
 
 mongoose.connect(process.env.MONGOLAB_URI || config.dbconnect, function (err) {
