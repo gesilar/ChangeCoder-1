@@ -1,11 +1,11 @@
 const mongodb = {
-    username: "sa",
+    username: "coder",
     password: "123",
-    url: "ds119588.mlab.com",
-    port: 19588,
+    url: "139.196.12.240",
+    port: 27017,
     database: "changecoder"
 };
 
-export default {
-    connectUrl: `mongodb://${mongodb.username}:${mongodb.password}@${mongodb.url}:${mongodb.port}/{mongodb.database}`,
-}
+module.exports = {
+    connectUrl: `mongodb://${mongodb.username}:${mongodb.password}@${mongodb.url}:${mongodb.port}/${mongodb.database}`,
+};

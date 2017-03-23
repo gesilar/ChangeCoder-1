@@ -11,5 +11,10 @@
     "lodash": "^4.17.4",
     "mongoose": "^4.9.0",
     "serve-favicon": "^2.3.2"
+  },
+  "devDependencies": {
+    "async": "^2.1.5",
+    "cheerio": "^0.22.0",
+    "iconv-lite": "^0.4.15"
   }
 }
