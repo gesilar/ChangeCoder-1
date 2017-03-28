@@ -1,0 +1,46 @@
+h1{
+    text-align: center;
+}
+form>ul{
+    list-style: none;
+    padding: 0;
+    margin: 0 20px;
+}
+form>ul>li{
+    height: 30px;
+    width: 100%;
+}
+
+ul>li>span{
+    display: inline-block;
+    width: 20%;
+}
+ul > li > input{
+    width: 75%;
+    border: 1px solid;
+    font-size: 18px;
+} 
+
+select {
+    width: 75%;
+    border: 1px solid;
+}
+
+
+.goodsTable{
+    width: 100%;
+}
+
+.goodsTable thead td{
+    display: table-cell;
+}
+
+.goodsTable tbody td{
+    font-size: 12px;
+}
+.goodsTable tbody td div{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 80px;
+}

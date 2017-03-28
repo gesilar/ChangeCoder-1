@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/goods.css"></link>
+    <link rel="stylesheet" type="text/css" href="styles/common.css"></link>
+    <script type="text/javascript" src="scripts/zepto.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <h1>商品信息编辑</h1>
+            <form action="/api/saveGoods" method="post">
+                <ul>
+                    <li>
+                        <span>类型：</span>
+                        <select name="type">
+                            <option>B</option>
+                            <option>F</option>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>O</option>
+                            <option>T</option>
+                            <option>E</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span>品牌</span>
+                        <input name="brand"/>
+                    </li>
+                    <li>
+                        <span>品名</span>
+                        <input name="name"/>
+                    </li>
+                    <li>
+                        <span>规格</span>
+                        <input name="spec"/>
+                    </li>
+                    <li>
+                        <span>底价</span>
+                        <input name="purchasePrice"/>
+                    </li>
+                    <li>
+                        <span>供货价</span>
+                        <input name="supplyPrice"/>
+                    </li>
+                    <li>
+                        <span>推荐价</span>
+                        <input name="recommendPrice"/>
+                    </li>
+                    <li>
+                        <span>淘宝价</span>
+                        <input name="taobaoPrice"/>
+                    </li>
+                    <li>
+                        <span>备注</span>
+                        <input name="remark"/>
+                    </li>
+                    <li>
+                        <span>拿货点</span>
+                        <input name="purchaseLocation"/>
+                    </li>
+                </ul>
+                <div>
+                    <input type="submit" value="提交"/>
+                    <button>清空</button>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script type="text/javascript">
+    </script>
+</html>

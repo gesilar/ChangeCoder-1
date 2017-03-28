@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=divice-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/goods.css">
+    <script type="text/javascript" src="scripts/zepto.min.js"></script>
+</head>
+
+<body>
+    <table class="goodsTable">
+        <thead>
+            <td colspan="5">产品价格表</td>
+        </thead>
+        <thead>
+            <td>产品名称</td>
+            <td>规格</td>
+            <td>供货价</td>
+            <td>推荐价</td>
+            <td>备注</td>
+        </thead>
+        <tbody>
+            <tr >
+                <td><div title="asdfasfdasdfasdfasdfasdfasdf">asdfasfdasdfasdfasdfasdfasdf</div></td>
+                <td>100ml</td>
+                <td>85</td>
+                <td>99</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><div>asdfasfdasdfasdfasdfasdfasdf</div></td>
+                <td>100ml</td>
+                <td>85</td>
+                <td>99</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><div>asdfasfdasdfasdfasdfasdfasdf</div></td>
+                <td>100ml</td>
+                <td>85</td>
+                <td>99</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script type="text/javascript">
+    $("tbody tr").click(function(e) {
+        $("tbody tr").each(function(index, item) {
+            item.style.background = "white";
+        });
+        var line = e.currentTarget;
+        line.style.background = "#ababab";
+    });
+    window.onload = function() {
+        $.ajax({
+            url: "/api/getGoods",
+            data: {
+                userType: "admin"
+            },
+            method: "get",
+            success: function(response) {
+                
+            },
+            error: function() {
+
+            }
+        })
+    }
+</script>
+</html>
