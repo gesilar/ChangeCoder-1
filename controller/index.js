@@ -34,7 +34,7 @@ function saveGoods(req, res, next) {
 }
 
 function getAllGoods(req, res, next) {
-    goodsDao.getAll(entity, function(result){
+    goodsDao.getAll(function(result){
       res.json({data: result});
     });
 }

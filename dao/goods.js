@@ -13,6 +13,8 @@ function save(entity, callback) {
 
 function getAll(callback) {
   Goods.find(function(err, goods){
+    console.log("success");
+    console.log(goods);
     callback(goods);
   });
 }
@@ -24,5 +26,7 @@ function getByType(findType, callback) {
 }
 
 module.exports = {
-  save: save
+  save: save,
+  getAll: getAll,
+  getByType: getByType
 };

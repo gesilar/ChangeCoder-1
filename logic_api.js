@@ -6,7 +6,7 @@ var router = express.Router();
 router.post('/savePmo', controller.savePmo);
 
 router.post('/saveGoods', controller.saveGoods);
-router.get('/getAllGoods', controller.saveGoods);
-router.get('/getGoodsByType', controller.saveGoods);
+router.get('/getAllGoods', controller.getAllGoods);
+router.get('/getGoodsByType', controller.getGoodsByType);
 
 module.exports = router;
